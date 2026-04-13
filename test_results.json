@@ -1,0 +1,81 @@
+[
+  {
+    "q": 1,
+    "question": "How many patients do we have?",
+    "sql": "SELECT COUNT(id) FROM patients",
+    "message": "Query returned 1 row(s) with columns: COUNT(id).",
+    "row_count": 1,
+    "columns": [
+      "COUNT(id)"
+    ],
+    "status": 200
+  },
+  {
+    "q": 2,
+    "question": "List all doctors and their specializations",
+    "sql": "SELECT name, specialization FROM doctors;",
+    "message": "Query returned 15 row(s) with columns: name, specialization.",
+    "row_count": 15,
+    "columns": [
+      "name",
+      "specialization"
+    ],
+    "status": 200
+  },
+  {
+    "q": 3,
+    "question": "Show me appointments for last month",
+    "sql": "SELECT * FROM appointments WHERE strftime('%Y-%m', appointment_date) = strftime('%Y-%m', date('now', '-1 month'))",
+    "message": "Query returned 27 row(s) with columns: id, patient_id, doctor_id, appointment_date, status, notes.",
+    "row_count": 27,
+    "columns": [
+      "id",
+      "patient_id",
+      "doctor_id",
+      "appointment_date",
+      "status",
+      "notes"
+    ],
+    "status": 200
+  },
+  {
+    "q": 4,
+    "question": "Which doctor has the most appointments?",
+    "sql": "None",
+    "message": "Expecting value: line 1 column 1 (char 0)",
+    "row_count": 0,
+    "columns": [],
+    "status": 200
+  },
+  {
+    "q": 5,
+    "question": "What is the total revenue?",
+    "sql": "SELECT SUM(total_amount) AS total_revenue FROM invoices WHERE status = 'paid'",
+    "message": "Query returned 1 row(s) with columns: total_revenue.",
+    "row_count": 1,
+    "columns": [
+      "total_revenue"
+    ],
+    "status": 200
+  },
+  {
+    "q": 6,
+    "question": "Show revenue by doctor",
+    "sql": "None",
+    "message": "Expecting value: line 1 column 1 (char 0)",
+    "row_count": 0,
+    "columns": [],
+    "status": 200
+  },
+  {
+    "q": 7,
+    "question": "How many cancelled appointments last quarter?",
+    "sql": "SELECT COUNT(*) FROM appointments WHERE status = 'cancelled' AND appointment_date BETWEEN date('now', '-3 month') AND date('now')",
+    "message": "Query returned 1 row(s) with columns: COUNT(*).",
+    "row_count": 1,
+    "columns": [
+      "COUNT(*)"
+    ],
+    "status": 200
+  }
+]

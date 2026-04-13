@@ -1,0 +1,9 @@
+# .gitignore
+.env
+__pycache__/
+*.pyc
+*.csv
+.vscode/
+clinic.db
+.env.example
+.venv

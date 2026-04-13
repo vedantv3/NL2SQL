@@ -1,0 +1,10 @@
+# ── Core ──────────────────────────────────────────────────
+vanna[openai,sqlite]>=2.0.0
+fastapi
+uvicorn[standard]
+plotly
+pandas
+python-dotenv
+
+# ── LLM Provider: Groq (OpenAI-compatible) ───────────────
+# No extra package needed — Groq uses the openai SDK bundled by vanna[openai]
